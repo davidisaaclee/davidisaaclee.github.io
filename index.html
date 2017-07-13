@@ -1,5 +1,106 @@
+<!DOCTYPE html>
 <html>
-	<body>
-		<p>under construction... hmu @davidisaaclee on Twitter ;)</p>
-	</body>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata|Spectral" rel="stylesheet">
+	<link rel="prefetch" href="./assets/pixelgrid_glimpse.png" />
+	<link rel="prefetch" href="./assets/voodoo_glimpse.png" />
+	<style type="text/css">
+		body {
+			font-family: 'Spectral', serif;
+		}
+
+		a {
+			/*color: #0000ff;*/
+			color: inherit;
+		}
+
+		a:hover .sticker {
+			box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+		}
+
+		#main {
+			margin: 20px;
+			font-size: 16pt;
+			line-height: 2;
+			max-width: 600px;
+		}
+
+		.sticker {
+			transition: 0.2s;
+			font-family: 'Inconsolata', monospace;
+			box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+			padding: 3px;
+			margin: 2px;
+			border-radius: 5px;
+		}
+
+		#modal {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100vw;
+			height: 100vh;
+
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#modal #stage {
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: center;
+		}
+
+		#modal #stage img {
+			max-width: 80%;
+			max-height: 80%;
+		}
+	</style>
+</head>
+<body>
+<div id="modal" style="visibility: hidden;" onclick="hideModal()">
+	<div id="stage">
+		<img></img>
+		<a href="#" onclick="hideModal(); return false;">close</a>
+	</div>
+</div>
+<div id="main">
+	<p>Hi, I'm <span class="sticker">David Lee</span>.</p>
+	<p>I'm a developer who makes <span class="sticker">tools for media creation</span>.</p>
+	<p>I'm also interested in <span class="sticker">gestural and expressive interfaces</span>.</p>
+	<p>I'm currently <span class="sticker">living in beachside south Maine</span> after <a href="https://www.recurse.com" target="_blank"><span class="sticker">attending Recurse Center in NYC</span></a>.</p>
+	<p>Right now, I'm working on <a href="#" onclick="presentImage('./assets/pixelgrid_glimpse.png'); return false;"><span class="sticker">a Microsoft Excel x Macromedia Flash fanfiction</span></a> and <a href="#" onclick="presentImage('./assets/voodoo_glimpse.png'); return false;"><span class="sticker">an iPhone app for making animations from shaders</span></a>. I would love to talk about these if you are curious.</p>
+	<p>I'm recently inspired by <a href="http://www.getplayground.com" target="_blank"><span class="sticker">Playground</span></a>, <a href="https://www.youtube.com/watch?v=A1vuzw9Stk8" target="_blank"><span class="sticker">Peter Blasser</span></a>, and <a href="https://www.youtube.com/watch?v=kpk2tdsPh0A" target="_blank"><span class="sticker">pannenkoek2012</span></a>.</p>
+	<p>
+	Some of my work is online:
+	<a href="https://github.com/davidisaaclee/tgm-20" target="_blank"><span class="sticker">tgm-20</span></a>
+	<a href="http://instagram.com/david.isaac.lee" target="_blank"><span class="sticker">output from iPhone animation app</span></a>
+	</p>
+
+	<p>
+	<a href="mailto:david@david-lee.net"><span class="sticker">email</span></a>
+	<a href="https://github.com/davidisaaclee" target="_blank"><span class="sticker">github</span></a>
+	</p>
+
+</div>
+
+<script type="text/javascript">
+	function presentImage(imagePath) {
+		var modal = document.querySelector("#modal");
+
+		var imageStage = document.querySelector("#modal img");
+		imageStage.src = imagePath;
+
+		modal.style['visibility'] = 'visible';
+	}
+
+	function hideModal() {
+		var modal = document.querySelector("#modal");
+		modal.style['visibility'] = 'hidden';
+	}
+</script>
+</body>
 </html>
