@@ -64,8 +64,7 @@
 <body>
 <div id="modal" style="visibility: hidden;" onclick="hideModal()">
 	<div id="stage">
-		<img></img>
-		<a href="#" onclick="hideModal(); return false;">close</a>
+		<a class="close-button" href="#" onclick="hideModal(); return false;">close</a>
 	</div>
 </div>
 <div id="main">
@@ -90,15 +89,27 @@
 
 <script type="text/javascript">
 	function presentImage(imagePath) {
+		var stage = document.querySelector("#stage");
+		var closeButton = document.querySelector("#stage .close-button");
+
+		// Create image stage and add to DOM, above the close button.
+		var img = document.createElement('img');
+		stage.insertBefore(img, closeButton);
+
+		// Set the image stage's image to the specified path.
+		img.src = imagePath;
+
+		// Show the modal.
 		var modal = document.querySelector("#modal");
-
-		var imageStage = document.querySelector("#modal img");
-		imageStage.src = imagePath;
-
 		modal.style['visibility'] = 'visible';
 	}
 
 	function hideModal() {
+		// Remove image stage from DOM.
+		var imageStage = document.querySelector("#modal img");
+		imageStage.parentElement.removeChild(imageStage);
+
+		// Hide the modal.
 		var modal = document.querySelector("#modal");
 		modal.style['visibility'] = 'hidden';
 	}
