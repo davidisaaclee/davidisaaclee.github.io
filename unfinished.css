@@ -1,0 +1,49 @@
+#unfinished-header {
+	display: block;
+	margin: 40vh auto;
+}
+
+.video-container {
+	display: inline-block;
+}
+
+.video-container > video {
+	display: inline;
+}
+
+.carousel {
+	width: 100%;
+	white-space: nowrap;
+	overflow: scroll;
+
+	border-radius: 2px;
+	border: 1px solid #ddd;
+}
+
+.carousel > * {
+	display: inline-block;
+	vertical-align: middle;
+
+	height: 70vh;
+	margin: 10px;
+	margin-left: 0;
+}
+
+.carousel > *:first-child {
+	margin-left: 10px;
+}
+
+section::after {
+	content: '';
+	margin: 30vh auto;
+	width: 40%;
+	display: block;
+	border-bottom: 2px solid black;
+}
+
+@media screen and (max-height: 900px) {
+	.carousel > * {
+		height: 90vh;
+	}
+}
+

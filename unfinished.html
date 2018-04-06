@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><img id="unfinished-header" src="assets/unfinished_header.jpg"><head><title>David Lee</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Inconsolata|Spectral" rel="stylesheet"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="unfinished.css"></head><section id="touchup"><div class="carousel"><span class="video-container"><video height="100%" loop autoplay controls><source src="assets/touchup/demo.mp4" type="video/mp4"></video></span><img src="assets/touchup/mainscreen.jpeg"><img src="assets/touchup/help.jpeg"></div><h1>Touchup</h1>
+<p>Quickly mask and collage images.</p>
+<h2>Features</h2>
+<ul>
+<li>Erase by scrubbing with your finger</li>
+<li>Position image with pinch-pan gesture</li>
+<li>Simple, single-screen interface</li>
+<li>Inline help overlay</li>
+<li>Quick undo/redo actions</li>
+<li>Stamp image to background</li>
+<li>Powered by Core Image</li>
+<li>Easy export to camera roll</li>
+<li>Video support</li>
+</ul>
+<h2>Takeaways</h2>
+<ul>
+<li>Learned how to use Core Image shaders</li>
+<li>Learned about exporting buffers from Core Image to Core Video to export video</li>
+<li>Really liked the simplicity of the inline help overlay</li>
+</ul>
+</section><section id="voodoo"><div class="carousel"><div><video height="100%" loop autoplay controls><source src="assets/voodoo/demo.mp4" type="video/mp4"></video></div><img src="assets/voodoo/pipeline.jpg"><img src="assets/voodoo/mainscreen.jpg"></div><h1>Voodoo</h1>
+<p>Apply and animate shaders on an image or video.</p>
+<h2>Features</h2>
+<ul>
+<li>Easily set up a pipeline of Core Image video effects over a base video or image</li>
+<li>Manipulate effects by binding effect parameters to touches</li>
+<li>Animate and loop changes to effect parameters</li>
+<li>Sequence changes to effect parameters with a step sequencer</li>
+<li>Easily inspect the result of a subset of the pipeline</li>
+<li>Export animation to camera roll</li>
+<li>Use an animation as the base material of a new effect pipeline</li>
+</ul>
+<h2>Takeaways</h2>
+<ul>
+<li>Had a lot of fun playing with this on the subway.</li>
+<li>Limiting the number of effects in the pipeline keeps the user experience simple; allowing the user to &quot;chain&quot; pipelines keeps the tool powerful.</li>
+<li>Easily recording changes with a camera-like interface is fun and easy, but tough to make a clean loop. A quantized sequencer helps to keep things clean.</li>
+<li>The interface for binding parameters to touch input is clunky: it's slow to configure, and doesn't clearly communicate the structure of the bindings. (I implemented the simplest thing, and designed a whole bunch of alternatives. I think there were a couple of slightly better alternatives in the pile; but, in general, I think &quot;patching interfaces&quot; is a tough problem on a small screen.)</li>
+<li>I was idealizing linear bindings from touch position to parameter changes, because I believed direct control would allow the user to get different styles of animation by learning to &quot;perform&quot; those styles (e.g. get a bouncy animation by learning how to gesture bouncily). This is not really possible. Figuring out a way to define non-linear mappings between input and controlled parameters would help make more dynamic animations.</li>
+</ul>
+</section><section id="milkcrate"><div class="carousel"><div><video height="100%" autoplay loop controls muted><source src="assets/milkcrate/demo.mp4" type="video/mp4"></video></div><img src="assets/milkcrate/mainscreen.jpeg"><img src="assets/milkcrate/help.jpeg"><img src="assets/milkcrate/cameraroll.jpeg"></div><h1>Milkcrate</h1>
+<p>Create &quot;album art&quot; videos from sound, text, and images.</p>
+<p>I made this as a utility to support another video app I was working on. In that app, the user could add a soundtrack by importing sound from a previously-captured video. I used this feature in tandem with iOS's screen recording feature to grab sound from Spotify or YouTube to put into my videos; but it was tough to find a specific sound by scanning my camera roll. Using this app to add &quot;album art&quot; to those soundtrack videos, I could easily find the sounds I wanted.</p>
+<h2>Features</h2>
+<ul>
+<li>Single-screen interface</li>
+<li>Inline help overlay</li>
+<li>Arrange text and background image to create album art</li>
+<li>Export as video to camera roll</li>
+</ul>
+<h2>Takeaways</h2>
+<ul>
+<li>Felt good to turn my camera roll into a slightly more functional file system :)</li>
+<li>Learned more about <code>AVComposition</code></li>
+</ul>
+</section><p style="text-align: center;">I'd love to <a href="mailto:david@david-lee.net">talk</a> about any of these.</p></html>
